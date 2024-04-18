@@ -10,5 +10,9 @@ public class ListBookResponse {
 
     private String name;
 
+    private String author;
+
     private int page;
+
+    private double price;
 }

@@ -1,6 +1,7 @@
 package com.example.pair5lms.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,15 +22,19 @@ public class User {
     private int id;
 
     @Column(name = "first_name")
+    @Size(min = 2, max = 32)
     private String firstName;
 
     @Column(name = "last_name")
+    @Size(min = 2, max = 32)
     private String lastName;
 
     @Column(name = "email")
+    @Size(max = 100)
     private String email;
 
     @Column(name = "password")
+    @Size(min = 8, max = 32)
     private String password;
 
     @OneToMany(mappedBy = "user")

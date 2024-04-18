@@ -24,6 +24,9 @@ public class BookRentalDetail {
     @JoinColumn(name = "book_location_id")
     private BookLocation bookLocation;
 
+    @Column(name = "book_price")
+    private double bookPrice;
+
     @ManyToOne
     @JoinColumn(name = "book_rental_id")
     private BookRental bookRental;

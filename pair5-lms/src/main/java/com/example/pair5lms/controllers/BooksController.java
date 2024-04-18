@@ -19,27 +19,27 @@ public class BooksController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public AddBookResponse add(@RequestBody @Valid AddBookRequest request){
+    public AddBookResponse add(@RequestBody @Valid AddBookRequest request) {
         return bookService.add(request);
     }
 
     @PutMapping
-    public UpdateBookResponse update(@RequestBody @Valid UpdateBookRequest request){
+    public UpdateBookResponse update(@RequestBody @Valid UpdateBookRequest request) {
         return bookService.update(request);
     }
 
     @DeleteMapping
-    public DeleteBookResponse delete(@RequestParam int id){
+    public DeleteBookResponse delete(@RequestParam int id) {
         return bookService.delete(id);
     }
 
     @GetMapping
-    public List<ListBookResponse> getAll(){
+    public List<ListBookResponse> getAll() {
         return bookService.getAll();
     }
 
     @GetMapping("/{getById}")
-    public GetBookResponse getById(@PathVariable int getById){
+    public GetBookResponse getById(@PathVariable int getById) {
         return bookService.getById(getById);
     }
 }

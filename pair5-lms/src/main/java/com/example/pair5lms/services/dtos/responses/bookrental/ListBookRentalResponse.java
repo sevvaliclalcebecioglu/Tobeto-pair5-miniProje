@@ -6,5 +6,9 @@ import lombok.Data;
 public class ListBookRentalResponse {
     private int id;
 
+    private String userName;
+
+    private double totalRentalCost;
+
     private boolean isAllBookReturned;
 }

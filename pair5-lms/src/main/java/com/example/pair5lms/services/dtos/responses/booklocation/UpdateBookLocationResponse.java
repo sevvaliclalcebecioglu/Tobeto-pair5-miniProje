@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 public class UpdateBookLocationResponse {
     private int id;
 
+    private int bookId;
+
     private boolean isAvailable;
 
     private LocalDateTime addedDate;

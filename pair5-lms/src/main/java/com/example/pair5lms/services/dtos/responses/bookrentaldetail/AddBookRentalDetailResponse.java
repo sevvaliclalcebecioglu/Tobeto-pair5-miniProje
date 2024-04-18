@@ -8,6 +8,12 @@ import java.time.LocalDateTime;
 public class AddBookRentalDetailResponse {
     private int id;
 
+    private int bookLocationId;
+
+    private int bookRentalId;
+
+    private double bookPrice;
+
     private LocalDateTime rentalStartDate;
 
     private LocalDateTime rentalEndDate;

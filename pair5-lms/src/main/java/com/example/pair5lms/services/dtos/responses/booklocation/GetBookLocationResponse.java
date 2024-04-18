@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 public class GetBookLocationResponse {
     private int id;
 
+    private int bookId;
+
     private boolean isAvailable;
 
     private LocalDateTime addedDate;

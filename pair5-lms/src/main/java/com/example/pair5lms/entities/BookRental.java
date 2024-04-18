@@ -24,6 +24,9 @@ public class BookRental {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(name = "total_rental_cost")
+    private double totalRentalCost;
+
     @Column(name = "is_all_book_returned")
     private boolean isAllBookReturned;
 
