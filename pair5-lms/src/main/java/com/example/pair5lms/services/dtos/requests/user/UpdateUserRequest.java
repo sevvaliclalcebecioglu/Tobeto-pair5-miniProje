@@ -1,10 +1,14 @@
 package com.example.pair5lms.services.dtos.requests.user;
 
 import jakarta.validation.constraints.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UpdateUserRequest {
+    @NotNull(message = "You must enter an id.")
     private int id;
 
     @Size(min = 2, max = 32, message = "First Name must be between 2-32 characters.")

@@ -1,7 +1,7 @@
 package com.example.pair5lms.core.configurations;
 
-import com.example.pair5lms.core.utils.exception.problemdetails.ValidationProblemDetails;
 import com.example.pair5lms.core.utils.exception.problemdetails.BusinessProblemDetails;
+import com.example.pair5lms.core.utils.exception.problemdetails.ValidationProblemDetails;
 import com.example.pair5lms.core.utils.exception.types.BusinessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
     @ExceptionHandler({BusinessException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public BusinessProblemDetails handleRuntimeException(BusinessException exception)

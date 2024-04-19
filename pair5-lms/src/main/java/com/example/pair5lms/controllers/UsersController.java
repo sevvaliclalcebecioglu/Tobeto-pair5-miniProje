@@ -19,27 +19,27 @@ public class UsersController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public AddUserResponse add(@RequestBody @Valid AddUserRequest request){
+    public AddUserResponse add(@RequestBody @Valid AddUserRequest request) {
         return userService.add(request);
     }
 
     @PutMapping
-    public UpdateUserResponse update(@RequestBody @Valid UpdateUserRequest request){
+    public UpdateUserResponse update(@RequestBody @Valid UpdateUserRequest request) {
         return userService.update(request);
     }
 
     @DeleteMapping
-    public DeleteUserResponse delete(@RequestParam int id){
+    public DeleteUserResponse delete(@RequestParam int id) {
         return userService.delete(id);
     }
 
     @GetMapping
-    public List<ListUserResponse> getAll(){
+    public List<ListUserResponse> getAll() {
         return userService.getAll();
     }
 
     @GetMapping("/{getById}")
-    public GetUserResponse getById(@PathVariable int getById){
+    public GetUserResponse getById(@PathVariable int getById) {
         return userService.getById(getById);
     }
 }

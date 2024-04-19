@@ -3,11 +3,14 @@ package com.example.pair5lms.services.dtos.requests.bookrentaldetail;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AddBookRentalDetailRequest {
     @NotNull(message = "You must enter a book location id.")
     private int bookLocationId;

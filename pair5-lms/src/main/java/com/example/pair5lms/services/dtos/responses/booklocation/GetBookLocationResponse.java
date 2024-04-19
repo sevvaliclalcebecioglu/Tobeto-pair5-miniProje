@@ -1,14 +1,17 @@
 package com.example.pair5lms.services.dtos.responses.booklocation;
 
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class GetBookLocationResponse {
     private int id;
 
-    private int bookId;
+    private String bookName;
 
     private boolean isAvailable;
 

@@ -1,8 +1,11 @@
 package com.example.pair5lms.services.abstracts;
 
+
 import com.example.pair5lms.services.dtos.requests.bookrentaldetail.AddBookRentalDetailRequest;
 import com.example.pair5lms.services.dtos.requests.bookrentaldetail.UpdateBookRentalDetailRequest;
 import com.example.pair5lms.services.dtos.responses.bookrentaldetail.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 

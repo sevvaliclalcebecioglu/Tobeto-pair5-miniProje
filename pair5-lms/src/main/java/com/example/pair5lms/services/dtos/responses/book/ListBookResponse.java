@@ -1,9 +1,20 @@
 package com.example.pair5lms.services.dtos.responses.book;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ListBookResponse {
+
+    public ListBookResponse(int id, String name, String author, int page) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.page = page;
+    }
+
     private int id;
 
     private int isbn;

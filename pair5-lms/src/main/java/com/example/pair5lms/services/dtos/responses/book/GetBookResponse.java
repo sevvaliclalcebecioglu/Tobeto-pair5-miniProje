@@ -1,8 +1,11 @@
 package com.example.pair5lms.services.dtos.responses.book;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class GetBookResponse {
     private int id;
 

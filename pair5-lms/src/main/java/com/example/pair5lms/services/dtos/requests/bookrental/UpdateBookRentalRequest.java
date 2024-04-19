@@ -2,11 +2,14 @@ package com.example.pair5lms.services.dtos.requests.bookrental;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UpdateBookRentalRequest {
     @NotNull(message = "You must enter an id.")
     private int id;

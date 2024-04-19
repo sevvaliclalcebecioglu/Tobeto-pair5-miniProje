@@ -3,13 +3,18 @@ package com.example.pair5lms.services.dtos.requests.user;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AddUserRequest {
+    @NotEmpty(message = "First name cannot be empty.")
     @Size(min = 2, max = 32, message = "First Name must be between 2-32 characters.")
     private String firstName;
 
+    @NotEmpty(message = "Last name cannot be empty.")
     @Size(min = 2, max = 32, message = "Last Name must be between 2-32 characters.")
     private String lastName;
 

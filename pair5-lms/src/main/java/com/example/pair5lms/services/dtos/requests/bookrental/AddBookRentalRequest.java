@@ -2,9 +2,12 @@ package com.example.pair5lms.services.dtos.requests.bookrental;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AddBookRentalRequest {
     @NotNull(message = "You must enter a user id.")
     private int userId;
