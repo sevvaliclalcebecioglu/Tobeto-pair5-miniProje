@@ -1,8 +1,11 @@
 package com.example.pair5lms.services.dtos.requests.bookrental;
 
+import com.example.pair5lms.services.dtos.requests.bookrentaldetail.AddBookRentalDetailRequest;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -12,9 +15,6 @@ public class AddBookRentalRequest {
     @NotNull(message = "You must enter a user id.")
     private int userId;
 
-    @NotNull(message = "Allowed input: 'true' or 'false'")
-    private boolean isAllBookReturned;
+    private List<AddBookRentalDetailRequest> addBookRentalDetailRequests;
 
-    @Positive(message = "Total Rental Cost must be higher than 0.")
-    private double totalRentalCost;
 }

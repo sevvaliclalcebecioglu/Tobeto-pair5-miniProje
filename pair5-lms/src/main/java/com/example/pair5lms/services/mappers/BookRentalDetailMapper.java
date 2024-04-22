@@ -10,13 +10,21 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface BookRentalDetailMapper {
     BookRentalDetailMapper INSTANCE = Mappers.getMapper(BookRentalDetailMapper.class);
 
-    @Mapping(target = "bookLocation.id", source = "bookLocationId")
+    @Mapping(target = "bookRentalId", source = "bookRental.id")
+    @Mapping(target = "bookId", source = "bookRentalDetail.bookLocation.id")
+    AddBookRentalDetailRequest bookRentalDetailRequestFromBookRentalDetail(BookRentalDetail bookRentalDetail);
+
+    List<AddBookRentalDetailRequest> bookRentalDetailRequestFromBookRentalDetailList(List<BookRentalDetail> bookRentalDetail);
+
+    @Mapping(target = "returned", defaultValue = "false")
     @Mapping(target = "bookRental.id", source = "bookRentalId")
     BookRentalDetail bookRentalDetailFromAddRequest(AddBookRentalDetailRequest request);
+
+    List<BookRentalDetail> bookRentalDetailFromAddRequestList(List<AddBookRentalDetailRequest> request);
 
     @Mapping(target = "bookLocationId", source = "bookLocation.id")
     @Mapping(target = "bookRentalId", source = "bookRental.id")
@@ -41,4 +49,8 @@ public interface BookRentalDetailMapper {
     @Mapping(target = "bookLocationId", source = "bookLocation.id")
     @Mapping(target = "bookRentalId", source = "bookRental.id")
     GetBookRentalDetailResponse getBookRentalDetailResponseFromBookRentalDetail(BookRentalDetail bookRentalDetail);
+
+    @Mapping(target = "bookLocation.id", source = "bookLocationId")
+    @Mapping(target = "bookRental.id", source = "bookRentalId")
+    BookRentalDetail bookRentalDetaiLFromAddResponse(AddBookRentalDetailResponse addBookRentalDetailResponse);
 }

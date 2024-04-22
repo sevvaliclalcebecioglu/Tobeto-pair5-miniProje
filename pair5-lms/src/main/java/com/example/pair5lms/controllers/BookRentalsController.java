@@ -15,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BookRentalsController {
     private BookRentalService bookRentalService;
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public AddBookRentalResponse add(@RequestBody @Valid AddBookRentalRequest request) {

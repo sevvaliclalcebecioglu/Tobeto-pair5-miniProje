@@ -41,6 +41,4 @@ public class BookLocationsController {
     public GetBookLocationResponse getById(@PathVariable int getById) {
         return bookLocationService.getById(getById);
     }
-
-
 }

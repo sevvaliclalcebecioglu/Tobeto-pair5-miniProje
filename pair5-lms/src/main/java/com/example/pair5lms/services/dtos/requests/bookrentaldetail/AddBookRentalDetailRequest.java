@@ -12,14 +12,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddBookRentalDetailRequest {
-    @NotNull(message = "You must enter a book location id.")
-    private int bookLocationId;
 
     @NotNull(message = "You must enter a book rental id.")
-    private int bookRentalId;
+    private int bookId;
 
     @Positive(message = "Book Price must be higher than 0.")
-    private double bookPrice;
+    private double bookRentalId;
 
     private LocalDateTime rentalStartDate;
 

@@ -35,4 +35,6 @@ public class BookLocation {
 
     @OneToMany(mappedBy = "bookLocation")
     List<BookRentalDetail> bookRentalDetails;
+
+
 }

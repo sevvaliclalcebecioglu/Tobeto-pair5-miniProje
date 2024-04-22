@@ -1,5 +1,6 @@
 package com.example.pair5lms.services.abstracts;
 
+import com.example.pair5lms.entities.BookLocation;
 import com.example.pair5lms.services.dtos.requests.booklocation.AddBookLocationRequest;
 import com.example.pair5lms.services.dtos.requests.booklocation.UpdateBookLocationRequest;
 import com.example.pair5lms.services.dtos.responses.book.ListBookResponse;
@@ -13,5 +14,6 @@ public interface BookLocationService {
     DeleteBookLocationResponse delete(int id);
     List<ListBookLocationResponse> getAll();
     GetBookLocationResponse getById(int id);
-
+    List<BookLocation> findByBookId(int id);
+    GetBookLocationResponse returnBookLocation(int id);
 }

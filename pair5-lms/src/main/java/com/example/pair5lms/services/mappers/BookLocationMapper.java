@@ -10,28 +10,40 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
-@Mapper(componentModel = "spring", uses = {UserMapper.class})
 
+@Mapper(componentModel = "spring")
 public interface BookLocationMapper {
     BookLocationMapper INSTANCE = Mappers.getMapper(BookLocationMapper.class);
-    @Mapping(target = "book.id" ,source = "bookId")
+
+    @Mapping(target = "book.id", source = "bookId")
     BookLocation bookLocationFromAddRequest(AddBookLocationRequest request);
-    @Mapping(target = "bookName",expression = "java(book.getName())")
-    @Mapping(target = "id" ,source = "bookLocation.id")
-    AddBookLocationResponse addResponseFromBookLocation(BookLocation bookLocation, Book book);
 
-    @Mapping(target = "book.id" ,source = "bookId")
+    @Mapping(target = "id", source = "bookLocation.id")
+    @Mapping(target = "bookName", source = "bookLocation.book.name")
+    AddBookLocationResponse addResponseFromBookLocation(BookLocation bookLocation);
+
+    @Mapping(target = "book.id", source = "bookId")
     BookLocation bookLocationFromUpdateRequest(UpdateBookLocationRequest request);
-    @Mapping(target = "bookName",expression = "java(book.getName())")
-    @Mapping(target = "id" ,source = "bookLocation.id")
-    UpdateBookLocationResponse updateResponseFromBookLocation(BookLocation bookLocation, Book book);
 
-    DeleteBookLocationResponse deleteResponseFromId(BookLocation bookLocation);
-    @Mapping(target = "bookName",expression = "java(bookLocation.getBook().getName())")
+    @Mapping(target = "id", source = "bookLocation.id")
+    @Mapping(target = "bookName", source = "bookLocation.book.name")
+    UpdateBookLocationResponse updateResponseFromBookLocation(BookLocation bookLocation);
+
+    @Mapping(target = "bookName", source = "book.name")
+    @Mapping(target = "id", source = "bookLocation.id")
+    DeleteBookLocationResponse deleteResponseFromId(BookLocation bookLocation, Book book);
+
+    @Mapping(target = "bookName", source = "book.name")
     ListBookLocationResponse listBookLocationResponseMap(BookLocation bookLocation);
+
     List<ListBookLocationResponse> listBookLocationResponse(List<BookLocation> bookLocations);
 
-    @Mapping(target = "bookName",expression = "java(bookLocation.getBook().getName())")
-    @Mapping(target = "id" ,source = "bookLocation.id")
+    @Mapping(target = "bookName", source = "book.name")
+    @Mapping(target = "id", source = "bookLocation.id")
     GetBookLocationResponse getResponseFromId(BookLocation bookLocation);
+
+    @Mapping(target = "bookId", source = "bookLocation.book.id")
+    UpdateBookLocationRequest updateRequestFromBookLocation(BookLocation bookLocation);
+
+    BookLocation bookLocationFromGetResponse(GetBookLocationResponse getBookLocationResponse);
 }

@@ -4,9 +4,10 @@ import com.example.pair5lms.entities.BookRental;
 import com.example.pair5lms.entities.BookRentalDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface BookRentalDetailRepository extends JpaRepository<BookRentalDetail, Integer> {
-    // Optional<BookRentalDetail> findByIdIgnoreCase(String bookLocation);
-    //Optional<BookRentalDetail> findByBookRentalId(Integer bookRentalId);
+    List<BookRentalDetail> findAllByBookRentalId(int id);
+    BookRentalDetail findByBookRentalIdAndBookLocationId(int bookRentalId, int booklocationId);
 }

@@ -12,5 +12,5 @@ public interface BookService {
     DeleteBookResponse delete(int id);
     List<ListBookResponse> getAll();
     GetBookResponse getById(int id);
-    List<ListBookResponse> searchByName(String name);
+    double getBookPriceFromId(int id);
 }

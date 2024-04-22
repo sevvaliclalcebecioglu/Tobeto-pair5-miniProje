@@ -29,6 +29,5 @@ public interface UserMapper {
     List<ListUserResponse> listUserResponse(List<User> users);
 
     GetUserResponse getResponseFromId(User user);
-
-
+    User userFromGetUserResponse(GetUserResponse getUserResponse);
 }

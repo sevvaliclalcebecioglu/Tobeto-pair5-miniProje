@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,9 +18,8 @@ public class UpdateBookRentalRequest {
     @NotNull(message = "You must enter a user id.")
     private int userId;
 
-    @Positive(message = "Total Rental Cost must be higher than 0.")
-    private double totalRentalCost;
-
     @NotNull(message = "Allowed input: 'true' or 'false'")
     private boolean isAllBookReturned;
+
+    private List<Integer> bookLocationIdsToReturn;
 }

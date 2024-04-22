@@ -42,4 +42,5 @@ public class UsersController {
     public GetUserResponse getById(@PathVariable int getById) {
         return userService.getById(getById);
     }
+
 }

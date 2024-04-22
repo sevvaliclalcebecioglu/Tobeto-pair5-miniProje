@@ -42,11 +42,4 @@ public class BooksController {
     public GetBookResponse getById(@PathVariable int getById) {
         return bookService.getById(getById);
     }
-
-    @GetMapping
-    @RequestMapping("/name")
-    public List<ListBookResponse> searchByName(@RequestParam String name) {
-        return bookService.searchByName(name);
-    }
-
 }

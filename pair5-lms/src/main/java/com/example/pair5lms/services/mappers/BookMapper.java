@@ -33,4 +33,5 @@ public interface BookMapper {
 
     GetBookResponse getResponseFromId(Book book);
 
+    Book bookFromGetResponse(GetBookResponse getBookResponse);
 }
