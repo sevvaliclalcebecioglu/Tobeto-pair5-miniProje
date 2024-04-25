@@ -31,3 +31,4 @@ public interface UserMapper {
     GetUserResponse getResponseFromId(User user);
     User userFromGetUserResponse(GetUserResponse getUserResponse);
 }
+

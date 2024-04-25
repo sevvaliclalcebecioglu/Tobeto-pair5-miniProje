@@ -22,6 +22,7 @@ public interface BookRentalDetailMapper {
 
     @Mapping(target = "returned", defaultValue = "false")
     @Mapping(target = "bookRental.id", source = "bookRentalId")
+    @Mapping(target = "bookLocation.id", source = "bookId")
     BookRentalDetail bookRentalDetailFromAddRequest(AddBookRentalDetailRequest request);
 
     List<BookRentalDetail> bookRentalDetailFromAddRequestList(List<AddBookRentalDetailRequest> request);

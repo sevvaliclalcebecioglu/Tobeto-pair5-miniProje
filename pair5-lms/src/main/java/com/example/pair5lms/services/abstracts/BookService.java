@@ -13,4 +13,5 @@ public interface BookService {
     List<ListBookResponse> getAll();
     GetBookResponse getById(int id);
     double getBookPriceFromId(int id);
+
 }

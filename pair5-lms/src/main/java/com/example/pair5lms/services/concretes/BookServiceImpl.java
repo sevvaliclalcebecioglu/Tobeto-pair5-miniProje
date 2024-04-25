@@ -61,8 +61,6 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public double getBookPriceFromId(int id) {
-        return 0;
+        return bookRepository.getPriceFromId(id);
     }
-
-
 }

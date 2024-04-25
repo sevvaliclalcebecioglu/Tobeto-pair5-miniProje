@@ -28,4 +28,6 @@ public class AddBookRentalDetailRequest {
 
     @NotNull(message = "Allowed input: 'true' or 'false'")
     private boolean isReturned;
+
+    private double bookPrice;
 }

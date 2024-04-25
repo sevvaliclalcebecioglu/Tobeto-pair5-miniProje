@@ -31,8 +31,6 @@ public class BookRentalServiceImpl implements BookRentalService {
     private BookLocationService bookLocationService;
     private BookService bookService;
 
-
-
     @Override
     public AddBookRentalResponse add(AddBookRentalRequest request) {
         BookRental bookRental = BookRentalMapper.INSTANCE.bookRentalFromAddRequest(request);
@@ -50,8 +48,8 @@ public class BookRentalServiceImpl implements BookRentalService {
         for (AddBookRentalDetailRequest addBookRentalDetailRequest : bookRentalDetailRequests) {
             double bookPrice = bookService.getBookPriceFromId(addBookRentalDetailRequest.getBookId());
             addBookRentalDetailRequest.setBookRentalId(bookRental.getId());
+            addBookRentalDetailRequest.setBookPrice(bookPrice);
             BookRentalDetail bookRentalDetail = bookRentalDetailService.addRequestFromRental(addBookRentalDetailRequest);
-            bookRentalDetail.setBookPrice(bookPrice);
             bookRentalDetails.add(bookRentalDetail);
             totalRentalCost += bookPrice;
         }
